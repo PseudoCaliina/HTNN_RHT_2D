@@ -63,7 +63,7 @@ uv sync
 7. Evaluate hydraulic conductivity predictions using a sythetic case.
 
 ## HT-NN input and output representation
-head matrix (**H**)
+- head matrix (**H**)
 
 $$
 \mathbf{H_{input}} =
@@ -74,7 +74,7 @@ h_{obs_1}(t_{N_t}) & \cdots & h_{obs_{N_w}}(t_{N_t})& RHS(N_t)
 \end{bmatrix}
 $$
 
-Input (**X**) dimension:  
+- Input (**X**) dimension:  
 
 $$
 \mathbf{X} \in \mathbb{R}^{B \times C_{in}\times N_t \times (N_w+1)}
@@ -86,7 +86,7 @@ $$
 - $C_{in}$ : Input channel number (Depend the parameters you want to estimate).
 - $B$    : Batch Size.
 
-Random field matrix (**K**)
+- Random field matrix (**K**)
 
 $$
 \mathbf{K} =
@@ -97,7 +97,7 @@ K_{N_y,1} & \cdots & K_{N_y,N_x}
 \end{bmatrix}
 $$
 
-Output (**Y**) dimension:
+- Output (**Y**) dimension:
 
 $$
 \mathbf{Y} \in \mathbb{R}^{B\times C_{out}\times N_y \times N_x}
