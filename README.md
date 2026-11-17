@@ -62,7 +62,50 @@ uv sync
 6. Training HT-NN model.
 7. Evaluate hydraulic conductivity predictions using a sythetic case.
 
+## HT-NN input and output representation
+head matrix (**H**)
+$$
+\mathbf{H_{input}} =
+\begin{bmatrix}
+h_{obs_1}(t_1) & \cdots & h_{obs_{N_w}}(t_1) & RHS(t_1)\\
+\vdots & \ddots & \vdots & \vdots \\
+h_{obs_1}(t_{N_t}) & \cdots & h_{obs_{N_w}}(t_{N_t})& RHS(N_t)
+\end{bmatrix}
+$$
+
+Input (**X**) dimension:  
+
+$$
+\mathbf{X} \in \mathbb{R}^{B \times C_{in}\times N_t \times (N_w+1)}
+$$
+
+- $RHS$: River Head Stage original signal.
+- $N_w$: Number of observation wells.
+- $N_t$: Number of observation time steps.
+- $C_{in}$ : Input channel number (Depend the parameters you want to estimate).
+- $B$    : Batch Size.
+
+Random field matrix (**K**)
+$$
+\mathbf{K} =
+\begin{bmatrix}
+K_{1,1} & \cdots & K_{1,N_x} \\
+\vdots & \ddots & \vdots \\
+K_{N_y,1} & \cdots & K_{N_y,N_x}
+\end{bmatrix}
+$$
+
+Output (**Y**) dimension:
+
+$$
+\mathbf{Y} \in \mathbb{R}^{B\times C_{out}\times N_y \times N_x}
+$$
+
+- $N_x$: Number of element in x direction.
+- $N_y$: Number of element in y direction.
+- $C_{out}$ : Output channel number (1 for 2D case).
+- $B$     : Batch Size.
+
 ## Author
 
 Pseudo-Callina 
-2026/11/17
