@@ -64,6 +64,7 @@ uv sync
 
 ## HT-NN input and output representation
 head matrix (**H**)
+
 $$
 \mathbf{H_{input}} =
 \begin{bmatrix}
@@ -86,6 +87,7 @@ $$
 - $B$    : Batch Size.
 
 Random field matrix (**K**)
+
 $$
 \mathbf{K} =
 \begin{bmatrix}
