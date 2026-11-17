@@ -1,0 +1,23 @@
+[project]
+name = "htnn-2d"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "PseudoCaliina", email = "a0980323420@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "gstools>=1.7.0",
+    "matplotlib>=3.11.2",
+    "pandas==2.3.3",
+    "pathlib>=1.0.1",
+    "pip>=26.3",
+]
+
+[project.scripts]
+htnn-2d = "htnn_2d:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"

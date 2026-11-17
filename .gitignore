@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Data
+river.xlsx
+river_sigs.csv
+
+# Local folders
+files
+RHT_pure_river
+training_result
+
+# Toy case folder
+toy_case/material_test
+toy_case/material_test_2
+toy_case/material_test_3
+toy_case/h_test_2
+toy_case/training_data
+toy_case/O-output.dat
+toy_case/O-Plot-Stress1.dat
