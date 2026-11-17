@@ -2,15 +2,15 @@
 # HT-NN RHS 2D case
 
 ## Overview
-* This project implements a 2D groundwater flow model for 
-**Hydraulic Tomography Neural Network (*HT-NN*)** to estimate 
-spatial distribution of **hydraulic conductivity (*K*)**.
+* This project implements a *2D* groundwater flow model for 
+Hydraulic Tomography Neural Network (*HT-NN*) to estimate 
+spatial distribution of hydraulic conductivity (*K*).
 
-* In this study, the **River Head Stage (*RHS*)** is introduced as time-varying head boundary that act as the main stimulus to the 2D groundwatwer system. Observation wells distributed throughout the domain will then record the head response induced by the RHS boundary.
+* In this study, the River Head Stage (*RHS*) is introduced as time-varying head boundary that act as the main stimulus to the 2D groundwatwer system. Observation wells distributed throughout the domain will then record the head response induced by the *RHS* boundary.
 
-* To generate training dataset for HT-NN,a **Monte Carlo framework** is conducted. Random K fields are generated and the corresponding groundwater simulation are performed to collect the head response from each observation well.
+* To generate training dataset for HT-NN,a Monte Carlo framework is conducted. Random *K* fields are generated and the corresponding groundwater simulation are performed to collect the head response from each observation well.
 
-* The result dataset contain paired random K field and simulated head, also added the original RHS to the simulated head as input, which are used to train supervised learning model for predicting K field by observing head response.
+* The result dataset contain paired random *K* field and simulated head, also added the original *RHS* to the simulated head as input, which are used to train supervised learning model for predicting *K* field by observing head response.
 
 
 ## Features
@@ -58,12 +58,12 @@ uv sync
 2. Generate random *K* fields using gstool.
 3. Perform groundwater forward simulations and collecting results.
 4. Generate training datasets.
-5. Develop HT-NN framework
-6. Training HT-NN model.
+5. Develop *HT-NN* framework
+6. Training *HT-NN* model.
 7. Evaluate hydraulic conductivity predictions using a sythetic case.
 
 ## HT-NN input and output representation
-- head matrix (**H**)
+### head matrix
 
 $$
 \mathbf{H_{input}} =
@@ -74,7 +74,7 @@ h_{obs_1}(t_{N_t}) & \cdots & h_{obs_{N_w}}(t_{N_t})& RHS(N_t)
 \end{bmatrix}
 $$
 
-- Input (**X**) dimension:  
+### Input dimension:  
 
 $$
 \mathbf{X} \in \mathbb{R}^{B \times C_{in}\times N_t \times (N_w+1)}
@@ -86,7 +86,7 @@ $$
 - $C_{in}$ : Input channel number (Depend the parameters you want to estimate).
 - $B$    : Batch Size.
 
-- Random field matrix (**K**)
+### Random field matrix
 
 $$
 \mathbf{K} =
@@ -97,7 +97,7 @@ K_{N_y,1} & \cdots & K_{N_y,N_x}
 \end{bmatrix}
 $$
 
-- Output (**Y**) dimension:
+### Output dimension:
 
 $$
 \mathbf{Y} \in \mathbb{R}^{B\times C_{out}\times N_y \times N_x}
@@ -105,7 +105,7 @@ $$
 
 - $N_x$: Number of element in x direction.
 - $N_y$: Number of element in y direction.
-- $C_{out}$ : Output channel number (1 for 2D case).
+- $C_{out}$ : Output channel number ($C_{out}$ = 1 for *2D* case).
 - $B$     : Batch Size.
 
 ## Author
